@@ -3,11 +3,11 @@
 --
 -- See the kickstart.nvim README for more information
 return {
-  {
-    'Sofiane5900/riderdark-vscode.nvim',
-    priority = 1000,
-    config = function()
-      vim.cmd.colorscheme 'vscode'
-    end,
-  },
+  --   {
+  --     'Sofiane5900/riderdark-vscode.nvim',
+  --     priority = 1000,
+  --     config = function()
+  --       vim.cmd.colorscheme 'vscode'
+  --     end,
+  --   },
 }
