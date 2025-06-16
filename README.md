@@ -75,8 +75,8 @@ too - it's ignored in the kickstart repo to make maintenance easier, but it's
 
 ```sh
 git clone git@github.com:Apirss/nvim-config.git "${XDG_CONFIG_HOME:-$HOME/.config}"/nvim
-mkdir -p "${XDG_CONFIG_HOME:-$HOME/.locale/share/fonts}"
-cp -r  "${XDG_CONFIG_HOME:-$HOME/.config}"/nvim/fonts "${XDG_CONFIG_HOME:-$HOME/.locale/share/fonts}"
+mkdir -p "${XDG_CONFIG_HOME:-$HOME/.local/share/fonts}"
+cp -r  "${XDG_CONFIG_HOME:-$HOME/.config}"/nvim/fonts "${XDG_CONFIG_HOME:-$HOME/.local/share/}"
 fc-cache -fv
 mkdir -p "${XDG_CONFIG_HOME:-$HOME/.config/alacritty/themes/}"
 cp -r "${XDG_CONFIG_HOME:-$HOME/.config}"/nvim/themes/ "${XDG_CONFIG_HOME:-$HOME/.config/alacritty/themes/}"
