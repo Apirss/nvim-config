@@ -79,7 +79,7 @@ mkdir -p "${XDG_CONFIG_HOME:-$HOME/.local/share/fonts}"
 cp -r  "${XDG_CONFIG_HOME:-$HOME/.config}"/nvim/fonts "${XDG_CONFIG_HOME:-$HOME/.local/share/}"
 fc-cache -fv
 mkdir -p "${XDG_CONFIG_HOME:-$HOME/.config/alacritty/themes/}"
-cp -r "${XDG_CONFIG_HOME:-$HOME/.config}"/nvim/themes/ "${XDG_CONFIG_HOME:-$HOME/.config/alacritty/themes/}"
+cp -r "${XDG_CONFIG_HOME:-$HOME/.config}"/nvim/themes/ "${XDG_CONFIG_HOME:-$HOME/.config/alacritty/}"
 ```
 
 </details>
