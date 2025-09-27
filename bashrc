@@ -1,4 +1,4 @@
-# ~/.bashrc: executed by bash(1) for non-login shells.
+#~/.bashrc: executed by bash(1) for non-login shells.
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
 
@@ -210,7 +210,7 @@ tag()
     done
     tag_name="$tag_slug""$num_tag"
     git status
-    git commit -m "${tag_name}"
+    git commit -m "feat(tag): ${tag_name}"
     echo -e "$GREEN"Tagging with name: "$NC""$tag_name"
     git tag -ma "$tag_name"
     if [ "$2" = "-p" ]
