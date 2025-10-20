@@ -180,7 +180,15 @@ vim.o.confirm = true
 vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
 
 -- Shortcuts Perso
+vim.api.nvim_create_autocmd('FileType', {
+  pattern = 'c',
+  callback = function()
+    vim.keymap.set('n', '<C-j>', ':%!clang-format -style=InheritParentConfig<CR>', { buffer = true })
+  end,
+})
+
 vim.keymap.set('n', '<C-s>', vim.cmd.w)
+vim.keymap.set('n', '<C-c>', '<Cmd>term line_count %<CR>')
 vim.keymap.set('n', '<leader>Q', vim.cmd.q, { desc = 'Perform a :q action' })
 vim.keymap.set('n', '<leader><CR>', function()
   vim.cmd.Telescope 'find_files'
