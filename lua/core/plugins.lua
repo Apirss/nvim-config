@@ -18,6 +18,7 @@ return require('packer').startup(function(use)
   use 'folke/tokyonight.nvim'
   use 'nvim-tree/nvim-tree.lua'
   use 'nvim-tree/nvim-web-devicons'
+  use 'lewis6991/gitsigns.nvim'
   use 'nvim-lualine/lualine.nvim'
   use 'nvim-treesitter/nvim-treesitter'
   use {
@@ -36,6 +37,8 @@ return require('packer').startup(function(use)
   use 'saadparwaiz1/cmp_luasnip'
   use 'rafamadriz/friendly-snippets'
   use 'stevearc/conform.nvim'
+  use 'folke/which-key.nvim'
+  use 'romgrk/barbar.nvim'
   -- use 'foo1/bar1.nvim'
   -- use 'foo2/bar2.nvim'
 

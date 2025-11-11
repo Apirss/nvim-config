@@ -21,6 +21,7 @@ vim.o.expandtab = true
 vim.keymap.set('n', '<C-s>', vim.cmd.w)
 vim.keymap.set('n', '<C-c>', '<Cmd>term line_count %<CR>')
 vim.keymap.set('n', '<leader>Q', vim.cmd.q, { desc = 'Perform a :q action' })
+vim.keymap.set('n', '<leader>W', ':wqa<CR>', { desc = 'Perform a :wqa action' })
 vim.keymap.set('n', '<leader>h', ':nohlsearch<CR>', { desc = 'Clear search highlight syntax' })
 -- vim.keymap.set('n', '<leader><CR>', function()
 --   vim.cmd.Telescope 'find_files'
