@@ -1,7 +1,7 @@
 require('tokyonight').setup {
-        styles = {
-          comments = { italic = false }, -- Disable italics in comments
-        },
-      }
+  styles = {
+    comments = { italic = false }, -- Disable italics in comments
+  },
+}
 
-vim.cmd("colorscheme tokyonight")
+vim.cmd 'colorscheme tokyonight'

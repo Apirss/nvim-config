@@ -1,1 +1,1 @@
-vim.cmd("colorscheme rider")
+vim.cmd 'colorscheme rider'
