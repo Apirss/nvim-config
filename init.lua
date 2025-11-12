@@ -535,6 +535,28 @@ require('lazy').setup({
   {
     -- Main LSP Configuration
     'neovim/nvim-lspconfig',
+    opts = {
+      servers = {
+        pyright = {
+          settings = {
+            python = {
+              venvPath = '/home/marco/.local/venv', -- dossier où se trouvent tes venvs
+              venv = 'nvim', -- nom du venv
+              pythonVersion = '3.12', -- version Python
+              analysis = {
+                typeCheckingMode = 'basic', -- comme dans ton JSON
+                autoSearchPaths = false, -- on utilise explicitement extraPaths
+                useLibraryCodeForTypes = true,
+                extraPaths = { -- chemins additionnels pour Pyright
+                  './',
+                  '/home/marco/.local/venv/nvim/lib/python3.12/site-packages',
+                },
+              },
+            },
+          },
+        },
+      },
+    },
     dependencies = {
       -- Automatically install LSPs and related tools to stdpath for Neovim
       -- Mason must be loaded before its dependents so we need to set it up here.
