@@ -23,8 +23,22 @@ vim.keymap.set('n', '<C-c>', '<Cmd>term line_count %<CR>')
 vim.keymap.set('n', '<leader>Q', vim.cmd.qa, { desc = 'Perform a :qa action' })
 vim.keymap.set('n', '<leader>W', ':wqa<CR>', { desc = 'Perform a :wqa action' })
 vim.keymap.set('n', '<leader>h', ':nohlsearch<CR>', { desc = 'Clear search highlight syntax' })
--- vim.keymap.set('n', '<leader><CR>', function()
---   vim.cmd.Telescope 'find_files'
--- end, { desc = 'Open Telescope Find File' })
--- vim.keymap.set('n', '<C-q>', vim.cmd.BufferClose)
--- vim.keymap.set('n', 'gt', vim.cmd.BufferNext)
+require('Comment').setup {
+  toggler = { line = '<C-/>', block = 'gbc' },
+  opleader = { line = '<C-/>', block = 'gb' },
+}
+
+-- Highlight
+-- Preview substitutions live, as you type!
+vim.o.inccommand = 'split'
+
+-- Highlight when yanking (copying) text
+--  Try it with `yap` in normal mode
+--  See `:help vim.hl.on_yank()`
+vim.api.nvim_create_autocmd('TextYankPost', {
+  desc = 'Highlight when yanking (copying) text',
+  group = vim.api.nvim_create_augroup('kickstart-highlight-yank', { clear = true }),
+  callback = function()
+    vim.hl.on_yank()
+  end,
+})

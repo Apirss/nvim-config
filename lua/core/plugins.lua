@@ -40,6 +40,7 @@ return require('packer').startup(function(use)
   use 'folke/which-key.nvim'
   use 'romgrk/barbar.nvim'
   use { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' }
+  use 'numToStr/Comment.nvim'
   -- use 'foo1/bar1.nvim'
   -- use 'foo2/bar2.nvim'
 
