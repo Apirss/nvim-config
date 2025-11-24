@@ -41,6 +41,13 @@ return require('packer').startup(function(use)
   use 'romgrk/barbar.nvim'
   use { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' }
   use 'numToStr/Comment.nvim'
+  use {
+    'tpope/vim-dadbod',
+    requires = { { 'kristijanhusak/vim-dadbod-ui' }, { 'kristijanhusak/vim-dadbod-completion' } },
+    config = function()
+      vim.g.db_ui_save_location = '/home/marco/Desktop/sql'
+    end,
+  }
   -- use 'foo1/bar1.nvim'
   -- use 'foo2/bar2.nvim'
 

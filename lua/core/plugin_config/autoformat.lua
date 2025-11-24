@@ -24,6 +24,14 @@ require('conform').setup {
     black = {
       prepend_args = { '--fast' },
     },
+    sqlfluff = {
+      command = 'sqlfluff',
+      args = { 'format', '--dialect=postgres', '-' },
+      stdin = true,
+      cwd = function()
+        return vim.fn.getcwd()
+      end,
+    },
   },
 
   formatters_by_ft = {
@@ -32,6 +40,7 @@ require('conform').setup {
     rust = { 'rustfmt', lsp_format = 'fallback' },
     javascript = { 'prettierd', 'prettier', stop_after_first = true },
     c = { 'clang-format' },
+    sql = { 'sqlfluff' },
   },
 }
 

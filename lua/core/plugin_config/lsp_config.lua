@@ -71,3 +71,8 @@ vim.lsp.config('clangd', {
   on_attach = on_attach,
   capabilities = capabilities,
 })
+
+vim.lsp.config('postgres_lsp', {
+  on_attach = on_attach,
+  capabilities = capabilities,
+})
