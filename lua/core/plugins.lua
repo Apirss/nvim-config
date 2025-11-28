@@ -45,7 +45,7 @@ return require('packer').startup(function(use)
     'tpope/vim-dadbod',
     requires = { { 'kristijanhusak/vim-dadbod-ui' }, { 'kristijanhusak/vim-dadbod-completion' } },
     config = function()
-      vim.g.db_ui_save_location = '/home/marco/Desktop/sql'
+      vim.g.db_ui_save_location = '/home/marco/Desktop/rush_sql'
     end,
   }
   -- use 'foo1/bar1.nvim'

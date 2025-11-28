@@ -180,7 +180,7 @@ _G.packer_plugins = {
     url = "https://github.com/folke/tokyonight.nvim"
   },
   ["vim-dadbod"] = {
-    config = { "\27LJ\2\nM\0\0\2\0\4\0\0056\0\0\0009\0\1\0'\1\3\0=\1\2\0K\0\1\0\28/home/marco/Desktop/sql\24db_ui_save_location\6g\bvim\0" },
+    config = { "\27LJ\2\nR\0\0\2\0\4\0\0056\0\0\0009\0\1\0'\1\3\0=\1\2\0K\0\1\0!/home/marco/Desktop/rush_sql\24db_ui_save_location\6g\bvim\0" },
     loaded = true,
     path = "/home/marco/.local/share/nvim/site/pack/packer/start/vim-dadbod",
     url = "https://github.com/tpope/vim-dadbod"
@@ -205,7 +205,7 @@ _G.packer_plugins = {
 time([[Defining packer_plugins]], false)
 -- Config for: vim-dadbod
 time([[Config for vim-dadbod]], true)
-try_loadstring("\27LJ\2\nM\0\0\2\0\4\0\0056\0\0\0009\0\1\0'\1\3\0=\1\2\0K\0\1\0\28/home/marco/Desktop/sql\24db_ui_save_location\6g\bvim\0", "config", "vim-dadbod")
+try_loadstring("\27LJ\2\nR\0\0\2\0\4\0\0056\0\0\0009\0\1\0'\1\3\0=\1\2\0K\0\1\0!/home/marco/Desktop/rush_sql\24db_ui_save_location\6g\bvim\0", "config", "vim-dadbod")
 time([[Config for vim-dadbod]], false)
 
 _G._packer.inside_compile = false
