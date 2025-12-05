@@ -8,8 +8,8 @@ require('CopilotChat').setup {
   build = 'make tiktoken',
 }
 
-vim.keymap.set('n', '<leader>zE', ':Copilot enable<CR>', { desc = 'Chat with Copilot' })
-vim.keymap.set('n', '<leader>zD', ':Copilot disable<CR>', { desc = 'Chat with Copilot' })
+vim.keymap.set('n', '<leader>zE', ':Copilot enable<CR>', { desc = 'Enable Copilot' })
+vim.keymap.set('n', '<leader>zD', ':Copilot disable<CR>', { desc = 'Disable Copilot' })
 vim.keymap.set('n', '<leader>zc', ':CopilotChat<CR>', { desc = 'Chat with Copilot' })
 vim.keymap.set('n', '<leader>ze', ':CopilotChatExplain<CR>', { desc = 'Explain Code' })
 vim.keymap.set('n', '<leader>zr', ':CopilotChatReview<CR>', { desc = 'Review Code' })
