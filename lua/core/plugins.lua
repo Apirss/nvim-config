@@ -48,6 +48,8 @@ return require('packer').startup(function(use)
       vim.g.db_ui_save_location = '/home/marco/Desktop/rush_sql'
     end,
   }
+  use 'github/copilot.vim'
+  use 'CopilotC-Nvim/CopilotChat.nvim'
   -- use 'foo1/bar1.nvim'
   -- use 'foo2/bar2.nvim'
 

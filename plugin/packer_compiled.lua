@@ -79,6 +79,11 @@ _G.packer_plugins = {
     path = "/home/marco/.local/share/nvim/site/pack/packer/start/Comment.nvim",
     url = "https://github.com/numToStr/Comment.nvim"
   },
+  ["CopilotChat.nvim"] = {
+    loaded = true,
+    path = "/home/marco/.local/share/nvim/site/pack/packer/start/CopilotChat.nvim",
+    url = "https://github.com/CopilotC-Nvim/CopilotChat.nvim"
+  },
   LuaSnip = {
     loaded = true,
     path = "/home/marco/.local/share/nvim/site/pack/packer/start/LuaSnip",
@@ -103,6 +108,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/marco/.local/share/nvim/site/pack/packer/start/conform.nvim",
     url = "https://github.com/stevearc/conform.nvim"
+  },
+  ["copilot.vim"] = {
+    loaded = true,
+    path = "/home/marco/.local/share/nvim/site/pack/packer/start/copilot.vim",
+    url = "https://github.com/github/copilot.vim"
   },
   ["friendly-snippets"] = {
     loaded = true,
