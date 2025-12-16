@@ -10,6 +10,7 @@ esac
 
 # Starship to have a beautifull prompt :)
 eval "$(starship init bash)"
+eval "$(zoxide init bash)"
 #neofetch
 
 # don't put duplicate lines or lines starting with space in the history.
@@ -145,6 +146,7 @@ alias mc='make clean'
 alias gs='git status'
 alias ga='git add'
 alias gm='git commit -m'
+alias dupdate='curl -L https://discord.com/api/download?platform=linux --output discord.deb; sudo dpkg -i discord.deb; rm discord.deb; sh -c "$(curl -sS https://vencord.dev/install.sh)"'
 
 create_sh()
 {
@@ -230,5 +232,5 @@ export DEBUGINFOD_URLS="https://debuginfod.ubuntu.com"
 export PGDATA="$HOME/postgres_data"
 export PGHOST="/tmp"
 export PGPORT="5432"
-export PATH=$PATH:/usr/lib/postgresql/16/bin/
+export PATH=$PATH:/usr/lib/postgresql/17/bin/
 cd Desktop
