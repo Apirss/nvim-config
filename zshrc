@@ -78,7 +78,7 @@ alias gm='git commit -m'
 alias dclean='docker compose down; docker rmi -f $(docker images -a -q); docker volume prune -a; docker rm $(docker ps -a -q)'
 alias dockerlist='docker images && docker volume ls && docker ps -a'
 alias down='docker compose down'
-alias dupdate='curl -L https://discord.com/api/download?platform=linux --output discord.deb; sudo dpkg -i discord.deb; rm discord.deb; sh -c "$(curl -sS https://vencord.dev/install.sh)"'
+alias dupdate='curl -L "https://discord.com/api/download?platform=linux" --output discord.deb; sudo dpkg -i discord.deb; rm discord.deb; sh -c "$(curl -sS https://vencord.dev/install.sh)"'
 
 create_sh()
 {
