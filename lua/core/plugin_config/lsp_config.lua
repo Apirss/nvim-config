@@ -1,6 +1,6 @@
 require('mason').setup()
 require('mason-lspconfig').setup {
-  ensure_installed = { 'lua_ls', 'clangd', 'pylsp' },
+  ensure_installed = { 'lua_ls', 'clangd', 'pyright' },
 }
 
 -- Diagnostic Config
@@ -62,7 +62,7 @@ vim.lsp.config('lua_ls', {
   },
 })
 
-vim.lsp.config('pylsp', {
+vim.lsp.config('pyright', {
   on_attach = on_attach,
   capabilities = capabilities,
 })
