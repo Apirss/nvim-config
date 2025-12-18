@@ -10,10 +10,32 @@ eval "$(starship init zsh)"
 eval "$(zoxide init zsh)"
 
 # source ~/.zsh/zsh-autocomplete/zsh-autocomplete.plugin.zsh
+# bindkey -M menuselect '\r' accept-line
 autoload -Uz compinit && compinit
 ZSH_AUTOSUGGEST_STRATEGY=(history completion)
 ZSH_AUTOSUGGEST_CLEAR_WIDGETS+=(bracketed-paste up-line-or-search down-line-or-search expand-or-complete accept-line push-line-or-edit)
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+
+source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+ZSH_HIGHLIGHT_STYLES[alias]=fg=green,bold
+ZSH_HIGHLIGHT_STYLES[function]=fg=214,bold
+ZSH_HIGHLIGHT_STYLES[command]=fg=214,bold
+ZSH_HIGHLIGHT_STYLES[builtin]=fg=214,bold
+# Keys, Config
+bindkey '\e[A' history-beginning-search-backward
+bindkey '\eOA' history-beginning-search-backward
+bindkey '\e[B' history-beginning-search-forward
+bindkey '\eOB' history-beginning-search-forward
+zle -A {.,}history-incremental-search-forward
+zle -A {.,}history-incremental-search-backward
+zstyle ':autocomplete:*' widget-style menu-select
+# zstyle ':autocomplete:*' list-lines 7
+zstyle ':completion:*' list-colors ''
+zstyle ':completion:*' list-packed false
+zstyle ':completion:*' list-rows-first false
+zstyle ':completion:*' menu select
+# zstyle ':completion:*' list-lines 2
+
 
 autoload -U select-word-style
 select-word-style bash
