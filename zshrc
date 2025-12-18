@@ -78,6 +78,7 @@ alias gm='git commit -m'
 alias dclean='docker compose down; docker rmi -f $(docker images -a -q); docker volume prune -a; docker rm $(docker ps -a -q)'
 alias dockerlist='docker images && docker volume ls && docker ps -a'
 alias down='docker compose down'
+alias dupdate='curl -L https://discord.com/api/download?platform=linux --output discord.deb; sudo dpkg -i discord.deb; rm discord.deb; sh -c "$(curl -sS https://vencord.dev/install.sh)"'
 
 create_sh()
 {
@@ -155,3 +156,9 @@ export PGHOST="/tmp"
 export PGPORT="5432"
 export PATH=$PATH:/usr/lib/postgresql/17/bin/
 cd Desktop
+
+export N_PREFIX="$HOME/n"; [[ :$PATH: == *":$N_PREFIX/bin:"* ]] || PATH+=":$N_PREFIX/bin"  # Added by n-install (see http://git.io/n-install-repo).
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
