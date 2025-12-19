@@ -1,0 +1,17 @@
+import = [
+    "~/.config/alacritty/themes/themes/tokyo_night_storm.toml"
+]
+
+[window.dimensions]
+columns = 80
+lines = 30
+
+[font]
+size = 14.0
+
+[font.normal]
+family = "JetBrainsMonoNerdFont"
+style = "Regular"
+
+[shell]
+program = "/usr/bin/zsh"
