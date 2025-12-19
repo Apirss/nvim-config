@@ -4,6 +4,10 @@ case $- in
       *) return;;
 esac
 
+if [[ "$TERM" == *-256color || "$TERM" == "xterm-color" ]]; then
+  autoload -Uz colors && colors
+fi
+
 # Starship to have a beautifull prompt :)
 eval "$(starship init zsh)"
 #neofetch
@@ -14,6 +18,7 @@ eval "$(zoxide init zsh)"
 autoload -Uz compinit && compinit
 ZSH_AUTOSUGGEST_STRATEGY=(history completion)
 ZSH_AUTOSUGGEST_CLEAR_WIDGETS+=(bracketed-paste up-line-or-search down-line-or-search expand-or-complete accept-line push-line-or-edit)
+ZSH_AUTOSUGGEST_CLEAR_WIDGETS+=(up-line-or-history down-line-or-history)
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
@@ -22,32 +27,43 @@ ZSH_HIGHLIGHT_STYLES[function]=fg=214,bold
 ZSH_HIGHLIGHT_STYLES[command]=fg=214,bold
 ZSH_HIGHLIGHT_STYLES[builtin]=fg=214,bold
 # Keys, Config
-bindkey '\e[A' history-beginning-search-backward
-bindkey '\eOA' history-beginning-search-backward
-bindkey '\e[B' history-beginning-search-forward
-bindkey '\eOB' history-beginning-search-forward
-zle -A {.,}history-incremental-search-forward
-zle -A {.,}history-incremental-search-backward
-zstyle ':autocomplete:*' widget-style menu-select
+# bindkey '\e[A' history-beginning-search-backward
+# bindkey '\eOA' history-beginning-search-backward
+# bindkey '\e[B' history-beginning-search-forward
+# bindkey '\eOB' history-beginning-search-forward
+# zle -A {.,}history-incremental-search-forward
+# zle -A {.,}history-incremental-search-backward
+# zstyle ':autocomplete:*' widget-style menu-select
+# zstyle ':completion:*' list-colors ''
+# zstyle ':completion:*' list-packed false
+# zstyle ':completion:*' list-rows-first false
+# zstyle ':completion:*' menu select
+
 # zstyle ':autocomplete:*' list-lines 7
-zstyle ':completion:*' list-colors ''
-zstyle ':completion:*' list-packed false
-zstyle ':completion:*' list-rows-first false
-zstyle ':completion:*' menu select
 # zstyle ':completion:*' list-lines 2
 
 
 autoload -U select-word-style
 select-word-style bash
-# Enable colors for ls and set LS_COLORS for folders
-export CLICOLOR=1
-export LS_COLORS="di=1;34:" # bold blue for directories
-# some more ls aliases
-#
+
+## enable color support of ls and also add handy aliases
+if [ -x /usr/bin/dircolors ]; then
+    color_prompt=yes
+    test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
+    alias ls='ls --color=auto'
+    #alias dir='dir --color=auto'
+    #alias vdir='vdir --color=auto'
+
+    alias grep='grep --color=auto'
+    alias fgrep='fgrep --color=auto'
+    alias egrep='egrep --color=auto'
+fi
+
+
+# colored GCC warnings and errors
+export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
 alias ll='ls --color=auto -alF'
 alias la='ls --color=auto -A'
-alias l='ls --color=auto'
-alias ls='ls --color=auto'
 # Enable word jumping with Ctrl+Left/Right in zsh
 bindkey "^[[1;5C" forward-word
 bindkey "^[[1;5D" backward-word
