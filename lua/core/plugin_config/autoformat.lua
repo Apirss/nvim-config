@@ -41,6 +41,7 @@ require('conform').setup {
     javascript = { 'prettierd', 'prettier', stop_after_first = true },
     c = { 'clang-format' },
     sql = { 'sqlfluff' },
+    yml = { 'yamllint' },
   },
 }
 
