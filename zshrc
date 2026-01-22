@@ -63,6 +63,8 @@ fi
 # colored GCC warnings and errors
 export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
 alias ll='ls --color=auto -alF'
+alias l='ls --color=auto -alF'
+alias k=kubectl
 alias la='ls --color=auto -A'
 # Enable word jumping with Ctrl+Left/Right in zsh
 bindkey "^[[1;5C" forward-word
@@ -162,7 +164,16 @@ tag()
 push()
 {
     git add -u
-    git commit -m "$1"
+    if [ "$2" = "-S" ]; then
+        git commit -m "$1" -S
+    elif [ "$2" = "-tag" ]; then
+        git commit -m "$1"
+        git tag -ma "$3"
+        git push --follow-tags
+        return
+    else
+        git commit -m "$1"
+    fi
     git push
 }
 
