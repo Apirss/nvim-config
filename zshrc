@@ -177,6 +177,12 @@ push()
     git push
 }
 
+t()
+{
+    tar -xf *.tar*
+    rm *.tar*
+}
+
 export DEBUGINFOD_URLS="https://debuginfod.ubuntu.com"
 export PGDATA="$HOME/postgres_data"
 export PGHOST="/tmp"
@@ -189,3 +195,17 @@ export N_PREFIX="$HOME/n"; [[ :$PATH: == *":$N_PREFIX/bin:"* ]] || PATH+=":$N_PR
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+
+# BEGIN opam configuration
+# This is useful if you're using opam as it adds:
+#   - the correct directories to the PATH
+#   - auto-completion for the opam binary
+# This section can be safely removed at any time if needed.
+[[ ! -r '/home/marco/.opam/opam-init/init.zsh' ]] || source '/home/marco/.opam/opam-init/init.zsh' > /dev/null 2> /dev/null
+# END opam configuration
+
+export QSYS_ROOTDIR="/home/marco/altera_lite/25.1std/quartus/sopc_builder/bin"
+
+# Added by Quartus Prime software
+export SALT_LICENSE_FILE="$SALT_LICENSE_FILE;/home/marco/.altera.quartus/questa_lic.dat"
