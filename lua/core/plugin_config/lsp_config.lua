@@ -70,9 +70,18 @@ vim.lsp.config('pyright', {
 vim.lsp.config('clangd', {
   on_attach = on_attach,
   capabilities = capabilities,
+  cmd = {
+    'clangd',
+    '--query-driver=/usr/bin/g++',
+  },
 })
 
 vim.lsp.config('postgres_lsp', {
+  on_attach = on_attach,
+  capabilities = capabilities,
+})
+
+vim.lsp.config('arduino-language-server', {
   on_attach = on_attach,
   capabilities = capabilities,
 })
