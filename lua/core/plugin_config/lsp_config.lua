@@ -85,3 +85,8 @@ vim.lsp.config('arduino-language-server', {
   on_attach = on_attach,
   capabilities = capabilities,
 })
+
+vim.lsp.config('vtsls', {
+  on_attach = on_attach,
+  capabilities = capabilities,
+})

@@ -154,7 +154,7 @@ tag()
     git status
     git commit -m "feat(tag): ${tag_name}"
     echo -e "$GREEN"Tagging with name: "$NC""$tag_name"
-    git tag -ma "$tag_name"
+    git tag "$tag_name"
     if [ "$2" = "-p" ]
     then
         git push --follow-tags
@@ -188,7 +188,8 @@ export PGDATA="$HOME/postgres_data"
 export PGHOST="/tmp"
 export PGPORT="5432"
 export PATH=$PATH:/usr/lib/postgresql/17/bin/
-cd Desktop
+export PATH=$PATH:/home/marco/Programs/intelFPGA/20.1/modelsim_ase/bin
+cd Documents
 
 export N_PREFIX="$HOME/n"; [[ :$PATH: == *":$N_PREFIX/bin:"* ]] || PATH+=":$N_PREFIX/bin"  # Added by n-install (see http://git.io/n-install-repo).
 
