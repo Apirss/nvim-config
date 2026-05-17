@@ -8,9 +8,12 @@ if [[ "$TERM" == *-256color || "$TERM" == "xterm-color" ]]; then
   autoload -Uz colors && colors
 fi
 
+# PATH
+export PATH=$PATH:~/.local/bin
+
 # Starship to have a beautifull prompt :)
 eval "$(starship init zsh)"
-#neofetch
+#fastfetch
 eval "$(zoxide init zsh)"
 
 # source ~/.zsh/zsh-autocomplete/zsh-autocomplete.plugin.zsh
@@ -62,41 +65,49 @@ fi
 
 # colored GCC warnings and errors
 export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
+
+# Custom Aliases and functions
+
+# Aliases
 alias ll='ls --color=auto -alF'
 alias l='ls --color=auto -alF'
-alias k=kubectl
 alias la='ls --color=auto -A'
 # Enable word jumping with Ctrl+Left/Right in zsh
 bindkey "^[[1;5C" forward-word
 bindkey "^[[1;5D" backward-word
 alias n=nvim
 alias vim=nvim
-
-createC() {
-touch "$1.c"
-touch "$1.h"
-echo "#include \"$1.h\"" > "$1.c"
-echo "#ifndef ${1^^}_H" >> "$1.h"
-echo "#define ${1^^}_H" >> "$1.h"
-echo "
+alias cd=z
 
 
-" >> "$1.h"
-echo "#endif /* ! ${1^^}_H */" >> "$1.h"
-}
-
-alias js='cd /home/marco/Documents/JS'
 alias mygcc='gcc -Wextra -Wall -Werror -Wvla -std=c99 -pedantic -g -fsanitize=address'
-alias m='make -B'
-alias md='make debug -B'
-alias mc='make clean'
+
+# GIT
 alias gs='git status'
 alias ga='git add'
 alias gm='git commit -m'
+alias gsw='git switch'
+alias gc='git checkout'
+
 alias dclean='docker compose down; docker rmi -f $(docker images -a -q); docker volume prune -a; docker rm $(docker ps -a -q)'
-alias dockerlist='docker images && docker volume ls && docker ps -a'
+alias dockerlist='docker images; docker volume ls; docker ps -a'
 alias down='docker compose down'
 alias dupdate='curl -L "https://discord.com/api/download?platform=linux" --output discord.deb; sudo dpkg -i discord.deb; rm discord.deb; sh -c "$(curl -sS https://vencord.dev/install.sh)"'
+alias t='tar -xf *.tar*;rm *.tar*'
+
+createC()
+{
+    touch "$1.c"
+    touch "$1.h"
+    echo "#include \"$1.h\"" > "$1.c"
+    echo "#ifndef ${1^^}_H" >> "$1.h"
+    echo "#define ${1^^}_H" >> "$1.h"
+    echo "
+    
+    
+    " >> "$1.h"
+    echo "#endif /* ! ${1^^}_H */" >> "$1.h"
+}
 
 create_sh()
 {
@@ -104,26 +115,6 @@ create_sh()
         chmod u+x "$1"
         echo "#!/bin/sh">"$1"
         vim "$1"
-}
-
-createMakefile()
-{
-    touch Makefile
-    echo "CC = gcc" > Makefile
-    echo "CFLAGS = -std=c99 -Wall -Wextra -Werror -pedantic -Wvla" >> Makefile
-    echo "SRC= main.c" >> Makefile
-    echo "OBJS = \$(SRC:.c=.o)" >> Makefile
-    echo "" >> Makefile
-    echo "BIN = main" >> Makefile
-    echo "" >> Makefile
-    echo "all: \$(BIN)" >> Makefile
-    echo "" >> Makefile
-    echo "\$(BIN): \$(OBJS)" >> Makefile
-    echo -e "\t\$(CC) \$(CFLAGS) \$(OBJS) -o \$(BIN) \$(LDFLAGS)" >> Makefile
-    echo "" >> Makefile
-    echo "clean:" >> Makefile
-    echo -en "\t" >> Makefile
-    echo "\$(RM) \$(BIN) \$(OBJS)" >> Makefile
 }
 
 tag()
@@ -176,37 +167,3 @@ push()
     fi
     git push
 }
-
-t()
-{
-    tar -xf *.tar*
-    rm *.tar*
-}
-
-export DEBUGINFOD_URLS="https://debuginfod.ubuntu.com"
-export PGDATA="$HOME/postgres_data"
-export PGHOST="/tmp"
-export PGPORT="5432"
-export PATH=$PATH:/usr/lib/postgresql/17/bin/
-export PATH=$PATH:/home/marco/Programs/intelFPGA/20.1/modelsim_ase/bin
-cd Documents
-
-export N_PREFIX="$HOME/n"; [[ :$PATH: == *":$N_PREFIX/bin:"* ]] || PATH+=":$N_PREFIX/bin"  # Added by n-install (see http://git.io/n-install-repo).
-
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
-
-# BEGIN opam configuration
-# This is useful if you're using opam as it adds:
-#   - the correct directories to the PATH
-#   - auto-completion for the opam binary
-# This section can be safely removed at any time if needed.
-[[ ! -r '/home/marco/.opam/opam-init/init.zsh' ]] || source '/home/marco/.opam/opam-init/init.zsh' > /dev/null 2> /dev/null
-# END opam configuration
-
-export QSYS_ROOTDIR="/home/marco/altera_lite/25.1std/quartus/sopc_builder/bin"
-
-# Added by Quartus Prime software
-export SALT_LICENSE_FILE="$SALT_LICENSE_FILE;/home/marco/.altera.quartus/questa_lic.dat"
