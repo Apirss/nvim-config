@@ -86,6 +86,11 @@ alias cd=z
 alias up='sudo nala update; sudo nala upgrade; sudo nala full-upgrade; sudo nala autoremove; sudo nala autopurge;'
 
 
+" >> "$1.h"
+echo "#endif /* ! ${1^^}_H */" >> "$1.h"
+}
+
+alias bat='batcat'
 alias mygcc='gcc -Wextra -Wall -Werror -Wvla -std=c99 -pedantic -g -fsanitize=address'
 
 # GIT
@@ -165,7 +170,7 @@ push()
         git commit -m "$1" -S
     elif [ "$2" = "-tag" ]; then
         git commit -m "$1"
-        git tag -ma "$3"
+        git tag -a "$3" -m "$3"
         git push --follow-tags
         return
     else
@@ -177,3 +182,19 @@ push()
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+
+# BEGIN opam configuration
+# This is useful if you're using opam as it adds:
+#   - the correct directories to the PATH
+#   - auto-completion for the opam binary
+# This section can be safely removed at any time if needed.
+[[ ! -r '/home/marco/.opam/opam-init/init.zsh' ]] || source '/home/marco/.opam/opam-init/init.zsh' > /dev/null 2> /dev/null
+# END opam configuration
+
+export QSYS_ROOTDIR="/home/marco/altera_lite/25.1std/quartus/sopc_builder/bin"
+
+# Added by Quartus Prime software
+export SALT_LICENSE_FILE="$SALT_LICENSE_FILE;/home/marco/.altera.quartus/questa_lic.dat"
+# Quartus Lite
+export PATH=$PATH:/home/marco/Programs/altera_lite/25.1std/quartus/bin/
