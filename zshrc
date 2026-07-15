@@ -10,6 +10,10 @@ fi
 
 # PATH
 export PATH=$PATH:~/.local/bin
+export PGDATA="$HOME/postgres_data"
+export PGHOST="/tmp"
+export PGPORT="5432"
+export PATH=$PATH:/usr/lib/postgresql/17/bin/
 
 # Starship to have a beautifull prompt :)
 eval "$(starship init zsh)"
@@ -76,8 +80,10 @@ alias la='ls --color=auto -A'
 bindkey "^[[1;5C" forward-word
 bindkey "^[[1;5D" backward-word
 alias n=nvim
+alias bat=batcat
 alias vim=nvim
 alias cd=z
+alias up='sudo nala update; sudo nala upgrade; sudo nala full-upgrade; sudo nala autoremove; sudo nala autopurge;'
 
 
 alias mygcc='gcc -Wextra -Wall -Werror -Wvla -std=c99 -pedantic -g -fsanitize=address'
@@ -167,3 +173,7 @@ push()
     fi
     git push
 }
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
