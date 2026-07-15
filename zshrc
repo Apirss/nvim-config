@@ -18,7 +18,6 @@ export PATH=$PATH:/usr/lib/postgresql/17/bin/
 # Starship to have a beautifull prompt :)
 eval "$(starship init zsh)"
 #fastfetch
-eval "$(zoxide init zsh)"
 
 # source ~/.zsh/zsh-autocomplete/zsh-autocomplete.plugin.zsh
 # bindkey -M menuselect '\r' accept-line
@@ -49,6 +48,7 @@ ZSH_HIGHLIGHT_STYLES[builtin]=fg=214,bold
 # zstyle ':autocomplete:*' list-lines 7
 # zstyle ':completion:*' list-lines 2
 
+eval "$(zoxide init zsh)"
 
 autoload -U select-word-style
 select-word-style bash
