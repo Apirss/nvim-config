@@ -86,10 +86,6 @@ alias cd=z
 alias up='sudo nala update; sudo nala upgrade; sudo nala full-upgrade; sudo nala autoremove; sudo nala autopurge;'
 
 
-" >> "$1.h"
-echo "#endif /* ! ${1^^}_H */" >> "$1.h"
-}
-
 alias bat='batcat'
 alias mygcc='gcc -Wextra -Wall -Werror -Wvla -std=c99 -pedantic -g -fsanitize=address'
 
