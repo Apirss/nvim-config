@@ -189,22 +189,6 @@ _G.packer_plugins = {
     path = "/home/marco/.local/share/nvim/site/pack/packer/start/tokyonight.nvim",
     url = "https://github.com/folke/tokyonight.nvim"
   },
-  ["vim-dadbod"] = {
-    config = { "\27LJ\2\nR\0\0\2\0\4\0\0056\0\0\0009\0\1\0'\1\3\0=\1\2\0K\0\1\0!/home/marco/Desktop/rush_sql\24db_ui_save_location\6g\bvim\0" },
-    loaded = true,
-    path = "/home/marco/.local/share/nvim/site/pack/packer/start/vim-dadbod",
-    url = "https://github.com/tpope/vim-dadbod"
-  },
-  ["vim-dadbod-completion"] = {
-    loaded = true,
-    path = "/home/marco/.local/share/nvim/site/pack/packer/start/vim-dadbod-completion",
-    url = "https://github.com/kristijanhusak/vim-dadbod-completion"
-  },
-  ["vim-dadbod-ui"] = {
-    loaded = true,
-    path = "/home/marco/.local/share/nvim/site/pack/packer/start/vim-dadbod-ui",
-    url = "https://github.com/kristijanhusak/vim-dadbod-ui"
-  },
   ["which-key.nvim"] = {
     loaded = true,
     path = "/home/marco/.local/share/nvim/site/pack/packer/start/which-key.nvim",
@@ -213,10 +197,6 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
--- Config for: vim-dadbod
-time([[Config for vim-dadbod]], true)
-try_loadstring("\27LJ\2\nR\0\0\2\0\4\0\0056\0\0\0009\0\1\0'\1\3\0=\1\2\0K\0\1\0!/home/marco/Desktop/rush_sql\24db_ui_save_location\6g\bvim\0", "config", "vim-dadbod")
-time([[Config for vim-dadbod]], false)
 
 _G._packer.inside_compile = false
 if _G._packer.needs_bufread == true then
