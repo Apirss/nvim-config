@@ -1,6 +1,6 @@
 require('mason').setup()
 require('mason-lspconfig').setup {
-    ensure_installed = { 'lua_ls', 'clangd', 'pyright' },
+    ensure_installed = { 'lua_ls', 'pyright' },
 }
 
 -- Diagnostic Config
@@ -71,8 +71,9 @@ vim.lsp.config('clangd', {
     on_attach = on_attach,
     capabilities = capabilities,
     cmd = {
-        'clangd',
-        '--query-driver=/usr/bin/g++',
+        "clangd",
+        "--clang-tidy",
+        "--query-driver=/usr/bin/c++,/usr/bin/g++*,/usr/bin/clang++*",
     },
 })
 

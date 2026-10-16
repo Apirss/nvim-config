@@ -49,8 +49,8 @@ local function save_profiles(threshold)
 end
 
 time([[Luarocks path setup]], true)
-local package_path_str = "/home/marco/.cache/nvim/packer_hererocks/2.1.1761786044/share/lua/5.1/?.lua;/home/marco/.cache/nvim/packer_hererocks/2.1.1761786044/share/lua/5.1/?/init.lua;/home/marco/.cache/nvim/packer_hererocks/2.1.1761786044/lib/luarocks/rocks-5.1/?.lua;/home/marco/.cache/nvim/packer_hererocks/2.1.1761786044/lib/luarocks/rocks-5.1/?/init.lua"
-local install_cpath_pattern = "/home/marco/.cache/nvim/packer_hererocks/2.1.1761786044/lib/lua/5.1/?.so"
+local package_path_str = "/home/marco/.cache/nvim/packer_hererocks/2.1.1774638290/share/lua/5.1/?.lua;/home/marco/.cache/nvim/packer_hererocks/2.1.1774638290/share/lua/5.1/?/init.lua;/home/marco/.cache/nvim/packer_hererocks/2.1.1774638290/lib/luarocks/rocks-5.1/?.lua;/home/marco/.cache/nvim/packer_hererocks/2.1.1774638290/lib/luarocks/rocks-5.1/?/init.lua"
+local install_cpath_pattern = "/home/marco/.cache/nvim/packer_hererocks/2.1.1774638290/lib/lua/5.1/?.so"
 if not string.find(package.path, package_path_str, 1, true) then
   package.path = package.path .. ';' .. package_path_str
 end
@@ -79,11 +79,6 @@ _G.packer_plugins = {
     path = "/home/marco/.local/share/nvim/site/pack/packer/start/Comment.nvim",
     url = "https://github.com/numToStr/Comment.nvim"
   },
-  ["CopilotChat.nvim"] = {
-    loaded = true,
-    path = "/home/marco/.local/share/nvim/site/pack/packer/start/CopilotChat.nvim",
-    url = "https://github.com/CopilotC-Nvim/CopilotChat.nvim"
-  },
   LuaSnip = {
     loaded = true,
     path = "/home/marco/.local/share/nvim/site/pack/packer/start/LuaSnip",
@@ -108,11 +103,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/marco/.local/share/nvim/site/pack/packer/start/conform.nvim",
     url = "https://github.com/stevearc/conform.nvim"
-  },
-  ["copilot.vim"] = {
-    loaded = true,
-    path = "/home/marco/.local/share/nvim/site/pack/packer/start/copilot.vim",
-    url = "https://github.com/github/copilot.vim"
   },
   ["friendly-snippets"] = {
     loaded = true,
@@ -158,6 +148,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/marco/.local/share/nvim/site/pack/packer/start/nvim-treesitter",
     url = "https://github.com/nvim-treesitter/nvim-treesitter"
+  },
+  ["nvim-treesitter-textobjects"] = {
+    loaded = true,
+    path = "/home/marco/.local/share/nvim/site/pack/packer/start/nvim-treesitter-textobjects",
+    url = "https://github.com/nvim-treesitter/nvim-treesitter-textobjects"
   },
   ["nvim-web-devicons"] = {
     loaded = true,
